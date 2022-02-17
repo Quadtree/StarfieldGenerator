@@ -1,0 +1,12 @@
+version: "3.3"
+
+services:
+  app:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+    - ./:/app:ro
+    - ./out:/app/out
+    working_dir: /app
+    command: ["php", "starfield_generator.php"]
