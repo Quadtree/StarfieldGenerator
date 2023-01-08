@@ -1,4 +1,3 @@
-FROM php:8
-RUN apt-get update && apt-get install -y zlib1g-dev libpng-dev
-RUN docker-php-ext-configure gd
-RUN docker-php-ext-install gd
+FROM ubuntu:22.04
+RUN apt-get update
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y php php-gd
